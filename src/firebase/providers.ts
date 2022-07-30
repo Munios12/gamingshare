@@ -22,9 +22,9 @@ export const signInWithGoogle = async () => {
       email,
       uid,
     };
-  } catch (error: any) {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+  } catch (error) {
+    const errorCode = error as Error;
+    const errorMessage = (error as Error).message;
     return {
       ok: false,
       errorMessage,
@@ -51,9 +51,9 @@ export const registerUserWithEmailPassword = async (
       displayName,
       email,
     };
-  } catch (error: any) {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+  } catch (error) {
+    // const errorCode = error.code;
+    const errorMessage = (error as Error).message;
     return {
       ok: false,
       errorMessage: "Already registered",
@@ -83,4 +83,8 @@ export const loginWithEmailPassword = async (
       errorMessage: "User not found",
     };
   }
+};
+
+export const logoutFirebase = async () => {
+  return await FirebaseAuth.signOut();
 };

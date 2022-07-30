@@ -1,0 +1,16 @@
+.videogameList__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+.videogameList__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #36315b;
+}

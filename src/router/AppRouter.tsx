@@ -26,8 +26,6 @@ export const AppRouter = () => {
     return <CheckingAuth />;
   }
 
-  console.log(status);
-
   return (
     <Routes>
       {/* <Route index element={<LoginSample />} /> */}

@@ -11,7 +11,7 @@ import {
 import "./login.css";
 import { AuthLayout } from "../../auth/layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
-import { FormEvent, useMemo } from "react";
+import { FormEvent, SyntheticEvent, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   checkingAuthentication,
@@ -19,6 +19,7 @@ import {
   startLoginWithEmailPassword,
 } from "../../store/auth/thunks";
 import type {} from "redux-thunk/extend-redux";
+import { SyntheticEventData } from "react-dom/test-utils";
 
 export const LoginSample = () => {
   const { status, errorMessage } = useSelector((state: any) => state.auth);
@@ -33,8 +34,8 @@ export const LoginSample = () => {
   const isAuthenticating = useMemo(() => status === "checking", [status]);
 
   const { email, password, onInputChange } = useForm(initialFormData);
-
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  //FormEvent<HTMLFormElement>
+  const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     console.log({ email, password });
     dispatch(startLoginWithEmailPassword(email, password));
