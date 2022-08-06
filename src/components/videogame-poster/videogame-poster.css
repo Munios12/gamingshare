@@ -1,4 +1,5 @@
 .videogame__poster {
+  width: 80%;
   position: relative;
   display: flex;
   align-items: center;
@@ -11,11 +12,15 @@
 
 .videogame-img {
   width: 100%;
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  /* box-shadow: rgba(254, 144, 234, 0.393) 0px 5px 15px; */
+  box-shadow: rgba(16, 233, 182, 0.441) 0px 0px 30px;
 }
 
 .videogame__title {
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.42);
+  font-size: medium;
+  font-weight: bold;
+  /* text-shadow: 1px 1px 7px #fe90ea; */
+  text-shadow: 1px 1px 8px rgb(16, 233, 182);
 }

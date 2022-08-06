@@ -3,7 +3,9 @@ import { useDispatch } from "react-redux";
 import { startLogout } from "../../store/auth/thunks";
 import * as api from "../../services/httpvideogames";
 import { VideogamePoster } from "../videogame-poster/VideogamePoster";
+
 import "./homepage.css";
+import { Header } from "../header/Header";
 
 export interface IvideogamePoster {
   id: number;
@@ -32,23 +34,15 @@ const HomePage = () => {
       });
 
       setVideogames(videogamesList);
+      console.log(videogamesList);
     });
   }, []);
 
   return (
     <>
-      <header>
-        <p>Name</p>
-        <button onClick={onLogout}>Logout</button>
-      </header>
+      <Header onLogout={onLogout} />
       <main>
         <div>
-          <nav>
-            <ul>
-              <li>Videogames List</li>
-              <li>Wishlist</li>
-            </ul>
-          </nav>
           <section className="videogameList__section">
             <ul className="videogameList__container">
               {videogames.map((videogame: IvideogamePoster) => (
