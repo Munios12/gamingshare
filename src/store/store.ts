@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authSlice } from "./auth/authSlice";
-import { videoGameSlice } from "./videogames/videoGameSlice";
+import { gamesFavListSlice } from "./fav-gamelist/gamesFavListSlice";
 
 export const store = configureStore({
   reducer: {
     auth: authSlice.reducer,
-    videogame: videoGameSlice.reducer,
+    favlist: gamesFavListSlice.reducer,
   },
 });

@@ -5,11 +5,11 @@ import { Header } from "../../components/header/Header";
 import * as api from "../../services/httpvideogames";
 import { startLogout } from "../../store/auth/thunks";
 
-interface VideogameData {
+export interface VideogameData {
   poster: string;
-  description: string;
-  genres: object;
-  metacritic: number;
+  description?: string;
+  genres?: object;
+  metacritic?: number;
   name: string;
 }
 
