@@ -26,8 +26,6 @@ export const AppRouter = () => {
     return <CheckingAuth />;
   }
 
-  console.log(status);
-
   return (
     <Routes>
       {/* <Route index element={<LoginSample />} /> */}
@@ -39,9 +37,6 @@ export const AppRouter = () => {
       )}
 
       <Route path="/*" element={<Navigate to={"/auth/login"} />} />
-      {/* <Route path="/auth/*" element={<AuthRoutes />} /> */}
-      {/* <Route path="/*" element={<MainAppRoutes />} /> */}
-      {/* <Route path="/*" element={<MainAppRoutes />} /> */}
     </Routes>
   );
 };
