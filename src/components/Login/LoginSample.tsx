@@ -37,7 +37,7 @@ export const LoginSample = () => {
   //FormEvent<HTMLFormElement>
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    console.log({ email, password });
+
     dispatch(startLoginWithEmailPassword(email, password));
   };
 

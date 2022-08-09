@@ -34,7 +34,6 @@ const HomePage = () => {
       });
 
       setVideogames(videogamesList);
-      console.log(videogamesList);
     });
   }, []);
 

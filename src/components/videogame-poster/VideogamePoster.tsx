@@ -19,6 +19,7 @@ export const VideogamePoster = ({
           />
         </Link>
         <p className="videogame__title">{videogame.name}</p>
+        <button>Add Favourite</button>
       </div>
     </>
   );

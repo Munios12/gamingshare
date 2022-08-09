@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Header } from "../../components/header/Header";
 import * as api from "../../services/httpvideogames";
+import { startLogout } from "../../store/auth/thunks";
 
 interface VideogameData {
   poster: string;
@@ -19,6 +22,8 @@ export const GameDetails = () => {
     name: "",
   };
 
+  const dispatch = useDispatch();
+
   const [videogame, setVideogame] = useState(initialData);
   const { id } = useParams();
   useEffect(() => {
@@ -36,10 +41,13 @@ export const GameDetails = () => {
     });
   }, []);
 
-  console.log(videogame.name);
+  const onLogout = () => {
+    dispatch(startLogout());
+  };
 
   return (
     <>
+      <Header onLogout={onLogout} />
       <img
         className="videogame-img"
         alt={`${videogame.name}`}
