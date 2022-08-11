@@ -1,3 +1,8 @@
+.main__container {
+  height: 100vh;
+  width: 100%;
+}
+
 .videogameList__container {
   display: flex;
   align-items: center;
@@ -5,7 +10,6 @@
   justify-content: center;
   list-style: none;
   padding: 0px;
-  margin: 0px;
   width: 100%;
 }
 
@@ -19,8 +23,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: rgb(63, 68, 72); */
-  background-image: url("https://media.istockphoto.com/vectors/vector-seamless-pattern-background-icon-vector-id1170275727?k=20&m=1170275727&s=170667a&w=0&h=UQBYoBErmAd51y_o_zAztRWJoQR_7kBQBfjfhQC8ZM4=");
+  background: rgb(229, 39, 119);
+  background: radial-gradient(
+    circle,
+    rgba(229, 39, 119, 1) 17%,
+    rgba(201, 40, 121, 1) 33%,
+    rgba(167, 39, 123, 1) 66%,
+    rgba(133, 38, 125, 1) 100%
+  );
+  /* background-image: url("https://media.istockphoto.com/vectors/vector-seamless-pattern-background-icon-vector-id1170275727?k=20&m=1170275727&s=170667a&w=0&h=UQBYoBErmAd51y_o_zAztRWJoQR_7kBQBfjfhQC8ZM4="); */
   /* background-image: url("https://wallpaperaccess.com/full/1351997.jpg"); */
   /* background-image: url("https://i.pinimg.com/736x/17/06/b6/1706b65720ee6671eaa6bf5db59a4d3a.jpg"); */
   background-size: contain;

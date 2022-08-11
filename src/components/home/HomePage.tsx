@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { startLogout } from "../../store/auth/thunks";
 import * as api from "../../services/httpvideogames";
 import { VideogamePoster } from "../videogame-poster/VideogamePoster";
-
 import "./homepage.css";
 import { Header } from "../header/Header";
 
@@ -40,7 +39,7 @@ const HomePage = () => {
   return (
     <>
       <Header onLogout={onLogout} />
-      <main>
+      <main className="main__container">
         <div>
           <section className="videogameList__section">
             <ul className="videogameList__container">

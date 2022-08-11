@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px;
+  height: 25vh;
+  width: 100%;
+  /* background-color: rgb(66, 61, 62); */
+  background-image: url("https://media.istockphoto.com/vectors/vector-seamless-pattern-background-icon-vector-id1170275727?k=20&m=1170275727&s=170667a&w=0&h=UQBYoBErmAd51y_o_zAztRWJoQR_7kBQBfjfhQC8ZM4=");
+}
+
+.header__logindata {
+  /* background-color: rgb(25, 210, 210); */
+  padding-top: 20px;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logindata__name {
+  color: white;
+  font-weight: 400;
+  font-size: large;
+  font-family: "Montserrat", sans-serif;
+}
+
+.logo {
+  width: 70px;
+  /* box-shadow: 1px 1px 20px rgb(251, 251, 251); */
+}
+
+.header__nav {
+  top: 135px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(50, 65, 79, 0.366);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(11.7px);
+  border-radius: 25px;
+  width: 80%;
+}
+
+.header__list {
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.header__list a {
+  color: rgb(231, 229, 255);
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
