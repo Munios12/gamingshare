@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import "./header.css";
+import logo from "../../assets/img/pf_logo.png";
 
 export const Header = ({ onLogout }: { onLogout(): void }) => {
   const estado = useSelector((state: any) => state.auth);
@@ -10,7 +11,7 @@ export const Header = ({ onLogout }: { onLogout(): void }) => {
     <>
       <header className="header">
         <div className="header__logindata">
-          <img src="pf_logo.png" className="logo" alt="logo" />
+          <img src={logo} className="logo" alt="logo" />
           <p className="logindata__name">{estado.email}</p>
           <button onClick={onLogout} className="logindata__loginbtn">
             Logout

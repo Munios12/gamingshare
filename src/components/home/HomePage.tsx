@@ -5,6 +5,7 @@ import * as api from "../../services/httpvideogames";
 import { VideogamePoster } from "../videogame-poster/VideogamePoster";
 import "./homepage.css";
 import { Header } from "../header/Header";
+import { startLoadingFavGames } from "../../store/fav-gamelist/thunks";
 
 export interface IvideogamePoster {
   id: number;
@@ -34,23 +35,22 @@ const HomePage = () => {
 
       setVideogames(videogamesList);
     });
+    dispatch(startLoadingFavGames());
   }, []);
 
   return (
     <>
       <Header onLogout={onLogout} />
       <main className="main__container">
-        <div>
-          <section className="videogameList__section">
-            <ul className="videogameList__container">
-              {videogames.map((videogame: IvideogamePoster) => (
-                <li key={videogame.id}>
-                  <VideogamePoster videogame={videogame} />
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
+        <section className="videogameList__section">
+          <ul className="videogameList__container">
+            {videogames.map((videogame: IvideogamePoster) => (
+              <li key={videogame.id}>
+                <VideogamePoster videogame={videogame} />
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
     </>
   );

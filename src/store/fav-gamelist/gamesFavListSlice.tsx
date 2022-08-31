@@ -3,17 +3,22 @@ import { createSlice } from "@reduxjs/toolkit";
 export const gamesFavListSlice = createSlice({
   name: "favlist",
   initialState: {
-    isSaving: true,
+    isSaving: false,
     savedGame: "",
     favList: [],
   },
   reducers: {
-    addNewFavouriteGame: (state, action) => {
-      console.log(state);
+    addNewFavouriteGame: (state: any, action) => {
+      state.favList.push(action.payload);
+      state.isSaving = false;
     },
-    loadFavouriteGames: (state, action) => {},
+    loadFavouriteGames: (state, action) => {
+      state.favList = action.payload;
+    },
     setSaving: (state) => {},
-    deleteGameByID: (state, action) => {},
+    deleteGameByID: (state, action) => {
+      // state.favList = state.favList.filter((game) => console.log(game));
+    },
   },
 });
 

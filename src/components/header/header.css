@@ -6,12 +6,10 @@
   padding: 0px;
   height: 25vh;
   width: 100%;
-  /* background-color: rgb(66, 61, 62); */
   background-image: url("https://media.istockphoto.com/vectors/vector-seamless-pattern-background-icon-vector-id1170275727?k=20&m=1170275727&s=170667a&w=0&h=UQBYoBErmAd51y_o_zAztRWJoQR_7kBQBfjfhQC8ZM4=");
 }
 
 .header__logindata {
-  /* background-color: rgb(25, 210, 210); */
   padding-top: 20px;
   height: 40px;
   width: 100%;
@@ -23,13 +21,12 @@
 .logindata__name {
   color: white;
   font-weight: 400;
-  font-size: large;
+  font-size: medium;
   font-family: "Montserrat", sans-serif;
 }
 
 .logo {
   width: 70px;
-  /* box-shadow: 1px 1px 20px rgb(251, 251, 251); */
 }
 
 .header__nav {
@@ -59,4 +56,13 @@
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
   list-style: none;
+}
+
+.logindata__loginbtn {
+  padding-top: 5px;
+  color: rgb(215, 91, 174);
+  border: none;
+  text-transform: uppercase;
+  background: none;
+  font-weight: bold;
 }

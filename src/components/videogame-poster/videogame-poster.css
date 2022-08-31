@@ -11,17 +11,38 @@
 }
 
 .videogame-img {
-  width: 100%;
+  width: 300px;
+  height: 200px;
   border-radius: 5px;
-  /* box-shadow: rgba(254, 144, 234, 0.393) 0px 5px 15px; */
-  /* box-shadow: rgba(16, 233, 182, 0.441) 0px 0px 30px; */
+  object-fit: cover;
 }
 
 .videogame__title {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin: 0px;
   color: white;
   font-size: medium;
-  /* font-weight: ; */
   font-family: "Montserrat", sans-serif;
-  /* text-shadow: 1px 1px 7px #fe90ea; */
   text-shadow: 1px 1px 8px rgb(59, 59, 59);
+}
+
+.fav_btn {
+  position: absolute;
+  left: 230px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(239, 127, 127, 0.427);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+}
+
+.fav_btn img {
+  padding-top: 3px;
+  width: 25px;
+  height: 20px;
 }
