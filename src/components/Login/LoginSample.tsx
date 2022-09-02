@@ -19,7 +19,6 @@ import {
   startLoginWithEmailPassword,
 } from "../../store/auth/thunks";
 import type {} from "redux-thunk/extend-redux";
-import { SyntheticEventData } from "react-dom/test-utils";
 
 export const LoginSample = () => {
   const { status, errorMessage } = useSelector((state: any) => state.auth);

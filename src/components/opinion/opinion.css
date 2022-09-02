@@ -1,0 +1,12 @@
+.review-container {
+  margin: 10px 0px;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 2px 1px 32px -12px;
+  width: 70%;
+}
+
+.glass-effect {
+  background: #fafafa10;
+  backdrop-filter: blur(15px);
+}

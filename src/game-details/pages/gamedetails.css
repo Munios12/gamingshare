@@ -1,0 +1,54 @@
+.section__gamedetails {
+  padding: 30px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(229, 39, 119);
+  background: radial-gradient(
+    circle,
+    rgba(229, 39, 119, 1) 17%,
+    rgba(201, 40, 121, 1) 33%,
+    rgba(167, 39, 123, 1) 66%,
+    rgba(133, 38, 125, 1) 100%
+  );
+}
+
+.genre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(50, 65, 79, 0.421);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(11.7px);
+  border-radius: 25px;
+  width: fit-content;
+  padding: 7px;
+  padding-bottom: 10px;
+}
+
+.gamedetails {
+  width: 350px;
+}
+
+.game-description {
+  text-align: justify;
+  line-height: 21px;
+  padding: 0px 10px;
+}
+
+.input-opinion {
+  margin-top: 50px;
+  width: 90%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 20px;
+  padding-left: 20px;
+}
+
+.review-list {
+  padding: inherit;
+  width: 100%;
+  list-style: none;
+}
