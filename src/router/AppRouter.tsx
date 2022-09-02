@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthRoutes } from "../auth/routes/AuthRoutes";
-import { LoginSample } from "../components/login/LoginSample";
 import { FirebaseAuth } from "../firebase/config";
 import { MainAppRoutes } from "../main-app/routes/MainAppRoutes";
 import { login, logout } from "../store/auth/authSlice";
@@ -20,7 +19,7 @@ export const AppRouter = () => {
       const { uid, email, displayName } = user;
       dispatch(login({ uid, email, displayName }));
     });
-  }, []);
+  });
 
   if (status === "checking") {
     return <CheckingAuth />;
@@ -28,8 +27,6 @@ export const AppRouter = () => {
 
   return (
     <Routes>
-      {/* <Route index element={<LoginSample />} /> */}
-
       {status === "authenticated" ? (
         <Route path="/*" element={<MainAppRoutes />} />
       ) : (

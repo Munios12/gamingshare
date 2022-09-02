@@ -11,17 +11,15 @@ import {
 import "./login.css";
 import { AuthLayout } from "../../auth/layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
-import { FormEvent, SyntheticEvent, useMemo } from "react";
+import { SyntheticEvent, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  checkingAuthentication,
   startGoogleSignIn,
   startLoginWithEmailPassword,
 } from "../../store/auth/thunks";
 import type {} from "redux-thunk/extend-redux";
-import { SyntheticEventData } from "react-dom/test-utils";
 
-export const LoginSample = () => {
+export const Login = () => {
   const { status, errorMessage } = useSelector((state: any) => state.auth);
 
   const dispatch = useDispatch();

@@ -1,5 +1,4 @@
-import { type } from "@testing-library/user-event/dist/type";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 interface ILoginFormData {
   email: string;

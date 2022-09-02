@@ -39,7 +39,7 @@ export const GameDetails = () => {
       };
       setVideogame(videogameData);
     });
-  }, []);
+  });
 
   const onLogout = () => {
     dispatch(startLogout());
