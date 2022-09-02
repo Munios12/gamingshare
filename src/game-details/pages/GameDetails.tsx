@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { SyntheticEvent, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Header } from "../../components/header/Header";
+import { Opinion } from "../../components/opinion/Opinion";
+import { useReviewForm } from "../../hooks/useReviewForm";
 import * as api from "../../services/httpvideogames";
 import { startLogout } from "../../store/auth/thunks";
+import { startLoadingReview, StartReview } from "../../store/review/thunks";
 import "./gamedetails.css";
-
 export interface VideogameData {
   poster: string;
   description?: string;
@@ -13,9 +15,12 @@ export interface VideogameData {
   metacritic?: number;
   released: string;
   name: string;
+  id: number;
 }
 
 export const GameDetails = () => {
+  let listToShow: any = [];
+
   const initialData: VideogameData = {
     poster: "",
     description: "",
@@ -23,13 +28,20 @@ export const GameDetails = () => {
     metacritic: 0,
     released: "",
     name: "",
+    id: 0,
   };
+
+  const reviewList = useSelector((state: any) => state.review.reviews);
 
   const dispatch = useDispatch();
 
   const [videogame, setVideogame] = useState(initialData);
 
   const { id } = useParams();
+
+  // let videogameReviewList = reviewList.map((review: any) =>
+  //   review.idGame === videogame.id.toString() ? review : "hi"
+  // );
 
   useEffect(() => {
     api.getVideogameByID(id).then((data) => {
@@ -40,11 +52,22 @@ export const GameDetails = () => {
         metacritic: data.metacritic,
         released: data.released,
         name: data.name,
+        id: data.id,
       };
-      console.log(videogameData);
 
       setVideogame(videogameData);
     });
+  }, []);
+
+  let createListtoShow = (arr: []) => {
+    listToShow = arr.map((review: any) =>
+      review.idGame === videogame.id.toString() ? review : 0
+    );
+    return listToShow;
+  };
+
+  useEffect(() => {
+    dispatch(startLoadingReview());
   }, []);
 
   const onLogout = () => {
@@ -53,6 +76,18 @@ export const GameDetails = () => {
 
   const truncate = (string: any, n: number) => {
     return string?.length > n ? string.substring(0, n - 1) + "..." : string;
+  };
+
+  const initialFormData = {
+    review: "",
+  };
+
+  const { review, onInputChange } = useReviewForm(initialFormData);
+
+  const saveReview = (e: SyntheticEvent) => {
+    e.preventDefault();
+    dispatch(StartReview(review, id));
+    dispatch(startLoadingReview());
   };
 
   return (
@@ -76,6 +111,24 @@ export const GameDetails = () => {
         <p className="game-description">
           {truncate(videogame.description, 500)}
         </p>
+        <ul className="review-list">
+          {reviewList.map((review: any) => (
+            <li key={review.idMessage}>
+              <Opinion review={review} />
+            </li>
+          ))}
+        </ul>
+
+        <form onSubmit={saveReview}>
+          <input
+            type="review"
+            name="review"
+            value={review}
+            className="input-opinion"
+            placeholder="Share your review"
+            onChange={onInputChange}
+          />
+        </form>
       </section>
     </>
   );

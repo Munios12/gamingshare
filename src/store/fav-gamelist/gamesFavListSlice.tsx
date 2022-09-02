@@ -17,7 +17,7 @@ export const gamesFavListSlice = createSlice({
     },
     setSaving: (state) => {},
     deleteGameByID: (state, action) => {
-      // state.favList = state.favList.filter((game) => console.log(game));
+      // state.favList = state.favList.filter((game) => game.id !== action.payload);
     },
   },
 });

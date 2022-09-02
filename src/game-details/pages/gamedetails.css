@@ -36,3 +36,19 @@
   line-height: 21px;
   padding: 0px 10px;
 }
+
+.input-opinion {
+  margin-top: 50px;
+  width: 90%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 20px;
+  padding-left: 20px;
+}
+
+.review-list {
+  padding: inherit;
+  width: 100%;
+  list-style: none;
+}

@@ -1,5 +1,3 @@
-import { Notes } from "@mui/icons-material";
-import { log } from "console";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { FirebaseDB } from "../firebase/config";
 

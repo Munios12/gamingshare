@@ -5,14 +5,15 @@ import "./header.css";
 import logo from "../../assets/img/pf_logo.png";
 
 export const Header = ({ onLogout }: { onLogout(): void }) => {
-  const estado = useSelector((state: any) => state.auth);
+  const state = useSelector((state: any) => state.auth);
 
+  const truncateUserName = (mail: string) => mail.split("@")[0];
   return (
     <>
       <header className="header">
         <div className="header__logindata">
           <img src={logo} className="logo" alt="logo" />
-          <p className="logindata__name">{estado.email}</p>
+          <p className="logindata__name">{truncateUserName(state.email)}</p>
           <button onClick={onLogout} className="logindata__loginbtn">
             Logout
           </button>
