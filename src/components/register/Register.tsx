@@ -19,15 +19,6 @@ const registerData = {
   displayName: "",
 };
 
-// const formValidations = {
-//   email: [(value: string) => value.includes("@"), "Email must have @"],
-//   password: [
-//     (value: string) => value.length <= 6,
-//     "Pasword must have more than 6 characters",
-//   ],
-//   displayName: [(value: string) => value.length >= 1, "A name is required"],
-// };
-
 export const Register = () => {
   const dispatch = useDispatch();
 
@@ -42,8 +33,6 @@ export const Register = () => {
     email,
     password,
     onInputChange,
-    formState,
-    isFormValid,
     displayNameValid,
     emailValid,
     passwordValid,
