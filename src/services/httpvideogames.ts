@@ -1,4 +1,4 @@
-const apiKey = "2186708cf518437e9c51b6093876f200";
+const apiKey = "2b36421cd3b64c88a4039c6b6370a353";
 
 const url = `https://api.rawg.io/api/games?key=${apiKey}&metacritic=100&page=1&page_size=5`;
 
