@@ -8,7 +8,6 @@ export const getVideogames = () => {
 
 export const getVideogameByID = (id: any) => {
   const urlByID = `https://api.rawg.io/api/games/${id}?key=${apiKey}`; //ESTA FUNCION SE ESTÁ EJECUTANDO 29 VECES
-  console.log(id);
 
   return fetch(urlByID).then((resp) => resp.json());
 };
