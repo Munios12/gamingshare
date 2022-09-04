@@ -9,6 +9,7 @@ import { startLoadingFavGames } from "../../store/fav-gamelist/thunks";
 
 export interface IvideogamePoster {
   id: number;
+  idGame?: string;
   name: string;
   poster: string;
 }
@@ -17,6 +18,7 @@ const HomePage = () => {
   const initialVideogameList: Array<IvideogamePoster> = [];
 
   const [videogames, setVideogames] = useState(initialVideogameList);
+
   const dispatch = useDispatch();
 
   const onLogout = () => {
@@ -36,13 +38,13 @@ const HomePage = () => {
       setVideogames(videogamesList);
     });
     dispatch(startLoadingFavGames());
-  }, []);
+  });
 
   return (
     <>
       <Header onLogout={onLogout} />
       <main className="main__container">
-        <section className="videogameList__section">
+        <section className="videogameList-section">
           <ul className="videogameList__container">
             {videogames.map((videogame: IvideogamePoster) => (
               <li key={videogame.id}>

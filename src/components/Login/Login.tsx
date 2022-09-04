@@ -32,6 +32,7 @@ export const Login = () => {
   const isAuthenticating = useMemo(() => status === "checking", [status]);
 
   const { email, password, onInputChange } = useForm(initialFormData);
+
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
 

@@ -6,8 +6,8 @@ import logo from "../../assets/img/pf_logo.png";
 
 export const Header = ({ onLogout }: { onLogout(): void }) => {
   const state = useSelector((state: any) => state.auth);
-
   const truncateUserName = (mail: string) => mail.split("@")[0];
+
   return (
     <>
       <header className="header">

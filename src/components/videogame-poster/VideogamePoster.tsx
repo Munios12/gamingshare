@@ -9,7 +9,7 @@ import {
 } from "../../store/fav-gamelist/thunks";
 import favRojo from "../../assets/img/boton_like_rojo.png";
 import botonLike from "../../assets/img/boton_like.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const VideogamePoster = ({
   videogame,
@@ -17,21 +17,25 @@ export const VideogamePoster = ({
   videogame: IvideogamePoster;
 }) => {
   const dispatch = useDispatch();
-  const { favList } = useSelector((state: any) => state.favlist);
+  const { favList } = useSelector((state: any) => state.favlist); //ANY HERE
 
   const [handleFav, setHandleFav] = useState(
-    favList.some((game: any) => game.name === `${videogame.name}`)
+    favList.some((game: IvideogamePoster) => {
+      return game.name === `${videogame.name}`;
+    })
   );
 
   const saveGameToFav = (id: number) => {
-    if (favList.some((game: any) => game.name === `${videogame.name}`)) {
+    if (
+      favList.some(
+        (game: IvideogamePoster) => game.name === `${videogame.name}`
+      )
+    ) {
       dispatch(startDeletingFavGame(id));
       setHandleFav(!handleFav);
-      console.log(handleFav);
     } else {
       dispatch(StartFavGame(videogame.id));
       setHandleFav(!handleFav);
-      console.log(handleFav);
     }
   };
 
@@ -46,7 +50,10 @@ export const VideogamePoster = ({
           />
         </Link>
         <p className="videogame__title">{videogame.name}</p>
-        <button className="fav_btn" onClick={() => saveGameToFav(videogame.id)}>
+        <button
+          className="fav__btn"
+          onClick={() => saveGameToFav(videogame.id)}
+        >
           {handleFav ? (
             <img src={favRojo} alt="favRojo" />
           ) : (
