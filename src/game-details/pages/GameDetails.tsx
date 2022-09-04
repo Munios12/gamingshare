@@ -19,7 +19,7 @@ export interface VideogameData {
 }
 
 export const GameDetails = () => {
-  let listToShow: any = [];
+  // let listToShow: any = [];
 
   const initialData: VideogameData = {
     poster: "",
@@ -59,16 +59,16 @@ export const GameDetails = () => {
     });
   });
 
-  let createListtoShow = (arr: []) => {
-    listToShow = arr.map((review: any) =>
-      review.idGame === videogame.id.toString() ? review : 0
-    );
-    return listToShow;
-  };
+  // let createListtoShow = (arr: []) => {
+  //   listToShow = arr.map((review: any) =>
+  //     review.idGame === videogame.id.toString() ? review : 0
+  //   );
+  //   return listToShow;
+  // };
 
   useEffect(() => {
     dispatch(startLoadingReview());
-  }, []);
+  });
 
   const onLogout = () => {
     dispatch(startLogout());

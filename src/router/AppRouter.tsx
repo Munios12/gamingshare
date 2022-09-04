@@ -9,7 +9,9 @@ import { login, logout } from "../store/auth/authSlice";
 import { CheckingAuth } from "../ui/components/CheckingAuth";
 
 export const AppRouter = () => {
+
   const { status } = useSelector((state: any) => state.auth); //ANY HERE
+
 
   const dispatch = useDispatch();
 
