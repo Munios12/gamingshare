@@ -1,4 +1,3 @@
-import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { MyFavouritesGame } from "../../components/favourites-games/MyFavouritesGame";
 import { GameDetails } from "../../game-details/pages/GameDetails";
