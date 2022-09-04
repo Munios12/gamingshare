@@ -38,7 +38,7 @@ const HomePage = () => {
       setVideogames(videogamesList);
     });
     dispatch(startLoadingFavGames());
-  });
+  }, []);
 
   return (
     <>

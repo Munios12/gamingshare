@@ -5,37 +5,37 @@ import { collection, doc, setDoc } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
 import { loadReview } from "../../helpers/loadReview";
 
-export const StartReview = (message: string, idGame: any) => {
-  return async (dispatch: Dispatch<AnyAction>, getState: any) => {
-    const { uid } = getState().auth;
+// export const StartReview = (message: string, idGame: any) => {
+//   return async (dispatch: Dispatch<AnyAction>, getState: any) => {
+//     const { uid } = getState().auth;
 
-    const newReview = {
-      author: uid,
-      reviewtext: message,
-      idMessage: "",
-      idGame: idGame,
-    };
+//     const newReview = {
+//       author: uid,
+//       reviewtext: message,
+//       idMessage: "",
+//       idGame: idGame,
+//     };
 
-    const setNewReview = doc(
-      collection(FirebaseDB, `${uid}/gaming-share/review`)
-    );
+//     const setNewReview = doc(
+//       collection(FirebaseDB, `${uid}/gaming-share/review`)
+//     );
 
-    newReview.idMessage = setNewReview.id;
+//     newReview.idMessage = setNewReview.id;
 
-    setDoc(setNewReview, newReview);
+//     setDoc(setNewReview, newReview);
 
-    // dispatch(addNewReview(newReview));
-    dispatch(loadAllReviews(newReview));
-  };
-};
+//     // dispatch(addNewReview(newReview));
+//     dispatch(loadAllReviews(newReview));
+//   };
+// };
 
-export const startLoadingReview = () => {
-  return async (dispatch: Dispatch<AnyAction>, getState: any) => {
-    const { uid } = getState().auth;
+// export const startLoadingReview = () => {
+//   return async (dispatch: Dispatch<AnyAction>, getState: any) => {
+//     const { uid } = getState().auth;
 
-    if (!uid) throw new Error("El UID del usuario no existe");
+//     if (!uid) throw new Error("El UID del usuario no existe");
 
-    const reviewList = await loadReview(uid);
-    dispatch(loadAllReviews(reviewList));
-  };
-};
+//     const reviewList = await loadReview(uid);
+//     dispatch(loadAllReviews(reviewList));
+//   };
+// };

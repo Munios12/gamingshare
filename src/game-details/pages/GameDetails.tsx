@@ -6,7 +6,7 @@ import { Opinion } from "../../components/opinion/Opinion";
 import { useReviewForm } from "../../hooks/useReviewForm";
 import * as api from "../../services/httpvideogames";
 import { startLogout } from "../../store/auth/thunks";
-import { startLoadingReview, StartReview } from "../../store/review/thunks";
+// import { startLoadingReview, StartReview } from "../../store/review/thunks";
 import "./gamedetails.css";
 export interface VideogameData {
   poster: string;
@@ -19,8 +19,6 @@ export interface VideogameData {
 }
 
 export const GameDetails = () => {
-  // let listToShow: any = [];
-
   const initialData: VideogameData = {
     poster: "",
     description: "",
@@ -39,10 +37,6 @@ export const GameDetails = () => {
 
   const { id } = useParams();
 
-  // let videogameReviewList = reviewList.map((review: any) =>
-  //   review.idGame === videogame.id.toString() ? review : "hi"
-  // );
-
   useEffect(() => {
     api.getVideogameByID(id).then((data) => {
       const videogameData: VideogameData = {
@@ -57,18 +51,11 @@ export const GameDetails = () => {
 
       setVideogame(videogameData);
     });
-  });
+  }, []);
 
-  // let createListtoShow = (arr: []) => {
-  //   listToShow = arr.map((review: any) =>
-  //     review.idGame === videogame.id.toString() ? review : 0
-  //   );
-  //   return listToShow;
-  // };
-
-  useEffect(() => {
-    dispatch(startLoadingReview());
-  });
+  // useEffect(() => {
+  //   dispatch(startLoadingReview());
+  // });
 
   const onLogout = () => {
     dispatch(startLogout());
@@ -86,8 +73,8 @@ export const GameDetails = () => {
 
   const saveReview = (e: SyntheticEvent) => {
     e.preventDefault();
-    dispatch(StartReview(review, id));
-    dispatch(startLoadingReview());
+    // dispatch(StartReview(review, id));
+    // dispatch(startLoadingReview());
   };
 
   return (
