@@ -1,4 +1,3 @@
-import { IvideogamePoster } from "../home/HomePage";
 import { Link as RouterLink } from "react-router-dom";
 import "./videogame-poster.css";
 import { Link } from "@mui/material";
@@ -10,6 +9,7 @@ import {
 import favRojo from "../../assets/img/boton_like_rojo.png";
 import botonLike from "../../assets/img/boton_like.png";
 import { useState } from "react";
+import { IvideogamePoster } from "../home/homeInterfaces";
 
 export const VideogamePoster = ({
   videogame,

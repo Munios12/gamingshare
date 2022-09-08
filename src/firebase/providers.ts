@@ -3,7 +3,6 @@ import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
-  updateProfile,
 } from "firebase/auth";
 import { FirebaseAuth } from "./config";
 
@@ -17,13 +16,12 @@ export const signInWithGoogle = async () => {
 
     return {
       ok: true,
-      //User info
       displayName,
       email,
       uid,
     };
   } catch (error) {
-    const errorCode = error as Error;
+    // const errorCode = error as Error;
     const errorMessage = (error as Error).message;
     return {
       ok: false,
@@ -52,8 +50,8 @@ export const registerUserWithEmailPassword = async (
       email,
     };
   } catch (error) {
-    // const errorCode = error.code;
     const errorMessage = (error as Error).message;
+
     return {
       ok: false,
       errorMessage: "Already registered",

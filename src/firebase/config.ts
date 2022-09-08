@@ -6,7 +6,7 @@ import { getFirestore } from "firebase/firestore/lite";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyDUVUbn-C3rNjp8I0rsG9DFXV1QZ2BkHqs",
   authDomain: "gaming-share-9a5fa.firebaseapp.com",
   projectId: "gaming-share-9a5fa",

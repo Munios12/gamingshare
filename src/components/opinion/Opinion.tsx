@@ -1,6 +1,7 @@
 import "./opinion.css";
+import { Ireview } from "./opinionInterface";
 
-export const Opinion = (review: any) => {
+export const Opinion = (review: Ireview) => {
   return (
     <>
       <div className="review-container glass-effect">

@@ -14,7 +14,13 @@ export const AuthLayout = ({
       direction={"column"}
       alignItems={"center"}
       justifyContent={"center"}
-      sx={{ minHeight: "100vh", backgroundColor: "#262254", padding: 4 }}
+      sx={{
+        minHeight: "100vh",
+        backgroundColor: "#262254",
+        backgroundImage:
+          "url('https://media.istockphoto.com/vectors/vector-seamless-pattern-background-icon-vector-id1170275727?k=20&m=1170275727&s=170667a&w=0&h=UQBYoBErmAd51y_o_zAztRWJoQR_7kBQBfjfhQC8ZM4=')",
+        padding: 4,
+      }}
     >
       <Grid
         item

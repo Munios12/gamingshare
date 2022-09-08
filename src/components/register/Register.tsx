@@ -23,6 +23,7 @@ export const Register = () => {
   const dispatch = useDispatch();
 
   const { status, errorMessage } = useSelector((state: any) => state.auth);
+
   const isCheckingAuthentication = useMemo(
     () => status === "checking",
     [status]

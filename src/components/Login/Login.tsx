@@ -98,6 +98,7 @@ export const Login = () => {
                   onClick={onGoogleSignIn}
                   variant="contained"
                   fullWidth
+                  aria-label="google-btn"
                 >
                   <Google />
                   <Typography sx={{ ml: 1 }}>GOOGLE</Typography>

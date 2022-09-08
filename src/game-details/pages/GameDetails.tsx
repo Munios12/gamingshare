@@ -6,17 +6,9 @@ import { Opinion } from "../../components/opinion/Opinion";
 import { useReviewForm } from "../../hooks/useReviewForm";
 import * as api from "../../services/httpvideogames";
 import { startLogout } from "../../store/auth/thunks";
-// import { startLoadingReview, StartReview } from "../../store/review/thunks";
+import { startLoadingReview, StartReview } from "../../store/review/thunks";
+import { VideogameData } from "./gameDetailsInterfaces";
 import "./gamedetails.css";
-export interface VideogameData {
-  poster: string;
-  description?: string;
-  genre: string;
-  metacritic?: number;
-  released: string;
-  name: string;
-  id: number;
-}
 
 export const GameDetails = () => {
   const initialData: VideogameData = {
@@ -28,6 +20,11 @@ export const GameDetails = () => {
     name: "",
     id: 0,
   };
+  const initialFormData = {
+    review: "",
+  };
+
+  const { review, onInputChange } = useReviewForm(initialFormData);
 
   const reviewList = useSelector((state: any) => state.review.reviews);
 
@@ -51,30 +48,26 @@ export const GameDetails = () => {
 
       setVideogame(videogameData);
     });
+    dispatch(startLoadingReview());
   }, []);
-
-  // useEffect(() => {
-  //   dispatch(startLoadingReview());
-  // });
 
   const onLogout = () => {
     dispatch(startLogout());
   };
 
-  const truncate = (string: any, n: number) => {
-    return string?.length > n ? string.substring(0, n - 1) + "..." : string;
+  const truncate = (text: any, n: number) => {
+    return text?.length > n ? text.substring(0, n - 1) + "..." : text;
   };
 
-  const initialFormData = {
-    review: "",
-  };
-
-  const { review, onInputChange } = useReviewForm(initialFormData);
+  const videogamePageReviews = Object.values(reviewList).filter(
+    (game: any) => game.idGame === id
+  );
 
   const saveReview = (e: SyntheticEvent) => {
     e.preventDefault();
-    // dispatch(StartReview(review, id));
-    // dispatch(startLoadingReview());
+
+    dispatch(StartReview(review, id));
+    dispatch(startLoadingReview());
   };
 
   return (
@@ -99,7 +92,7 @@ export const GameDetails = () => {
           {truncate(videogame.description, 500)}
         </p>
         <ul className="review-list">
-          {reviewList.map((review: any) => (
+          {videogamePageReviews.map((review: any) => (
             <li key={review.idMessage}>
               <Opinion review={review} />
             </li>
@@ -112,7 +105,7 @@ export const GameDetails = () => {
             name="review"
             value={review}
             className="input-opinion"
-            placeholder="Share your review"
+            placeholder="Share your opinion"
             onChange={onInputChange}
           />
         </form>

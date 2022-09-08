@@ -3,8 +3,10 @@ import { Header } from "../header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../store/auth/thunks";
 import { startLoadingFavGames } from "../../store/fav-gamelist/thunks";
-import { IvideogamePoster } from "../home/HomePage";
+
 import { VideogamePoster } from "../videogame-poster/VideogamePoster";
+import "./myfavouritesgames.css";
+import { IvideogamePoster } from "../home/homeInterfaces";
 
 export const MyFavouritesGame = () => {
   const dispatch = useDispatch();
@@ -17,19 +19,22 @@ export const MyFavouritesGame = () => {
 
   useEffect(() => {
     dispatch(startLoadingFavGames());
-  }, [favList]);
+  }, []);
 
   return (
     <>
       <Header onLogout={onLogout} />
-      <div>Lista de favoritos</div>
-      <ul>
-        {favList.map((videogame: IvideogamePoster) => (
-          <li key={videogame.id}>
-            <VideogamePoster videogame={videogame} />
-          </li>
-        ))}
-      </ul>
+      <main className="main__favcontainer">
+        <section className="favList-section">
+          <ul className="favList__container">
+            {favList.map((videogame: IvideogamePoster) => (
+              <li key={videogame.id}>
+                <VideogamePoster videogame={videogame} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
     </>
   );
 };

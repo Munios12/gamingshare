@@ -6,13 +6,7 @@ import { VideogamePoster } from "../videogame-poster/VideogamePoster";
 import "./homepage.css";
 import { Header } from "../header/Header";
 import { startLoadingFavGames } from "../../store/fav-gamelist/thunks";
-
-export interface IvideogamePoster {
-  id: number;
-  idGame?: string;
-  name: string;
-  poster: string;
-}
+import { IdataModel, IvideogamePoster } from "./homeInterfaces";
 
 const HomePage = () => {
   const initialVideogameList: Array<IvideogamePoster> = [];
@@ -27,7 +21,7 @@ const HomePage = () => {
 
   useEffect(() => {
     api.getVideogames().then((data) => {
-      const videogamesList = data.results.map((data: any) => {
+      const videogamesList = data.results.map((data: IdataModel) => {
         return {
           id: data.id,
           name: data.name,

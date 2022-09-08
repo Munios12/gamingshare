@@ -1,0 +1,36 @@
+.main__favcontainer {
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(229, 39, 119);
+  background: radial-gradient(
+    circle,
+    rgba(229, 39, 119, 1) 17%,
+    rgba(201, 40, 121, 1) 33%,
+    rgba(167, 39, 123, 1) 66%,
+    rgba(133, 38, 125, 1) 100%
+  );
+  padding-top: 20px;
+}
+
+.favList__container {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+}
+
+.favList__container li {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favList-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

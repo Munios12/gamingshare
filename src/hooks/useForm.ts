@@ -1,14 +1,5 @@
 import { ChangeEvent, useState } from "react";
-
-interface ILoginFormData {
-  email: string;
-  password: string;
-  displayName?: string;
-  isFormValid?: boolean;
-  displayNameValid?: boolean;
-  emailValid?: boolean;
-  passwordValid?: boolean;
-}
+import { ILoginFormData } from "./useFormInterfaces";
 
 export const useForm = (initialForm: ILoginFormData) => {
   const [formState, setFormState] = useState(initialForm);
