@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Header } from "../header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../store/auth/thunks";

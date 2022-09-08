@@ -8,7 +8,7 @@ import {
 } from "../../firebase/providers";
 import { checkingCredentials, login, logout } from "./authSlice";
 
-export const checkingAuthentication = (email: string, password: string) => {
+export const checkingAuthentication = () => {
   return async (dispatch: Dispatch<AnyAction>) => {
     dispatch(checkingCredentials());
   };

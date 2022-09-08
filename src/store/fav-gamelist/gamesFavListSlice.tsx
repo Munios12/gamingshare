@@ -15,16 +15,13 @@ export const gamesFavListSlice = createSlice({
     loadFavouriteGames: (state, action) => {
       state.favList = action.payload;
     },
-    setSaving: (state) => {},
     deleteGameByID: (state, action) => {
-      // state.favList = state.favList.filter((game) => game.id !== action.payload);
+      state.favList = state.favList.filter(
+        (game: any) => game.id !== action.payload
+      );
     },
   },
 });
 
-export const {
-  addNewFavouriteGame,
-  loadFavouriteGames,
-  setSaving,
-  deleteGameByID,
-} = gamesFavListSlice.actions;
+export const { addNewFavouriteGame, loadFavouriteGames, deleteGameByID } =
+  gamesFavListSlice.actions;

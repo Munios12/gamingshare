@@ -24,7 +24,6 @@ export const StartReview = (message: string, idGame: any) => {
 
     setDoc(setNewReview, newReview);
     dispatch(addNewReview(newReview));
-    dispatch(loadAllReviews(newReview));
   };
 };
 

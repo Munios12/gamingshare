@@ -33,6 +33,7 @@ describe("Given <Login/>", () => {
         </Provider>
       );
     });
+
     test("Should call startGoogleSignIn when press google btn", () => {
       render(
         <Provider store={store}>

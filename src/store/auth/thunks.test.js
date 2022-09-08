@@ -3,11 +3,11 @@ import { checkingCredentials, login, logout } from "./authSlice";
 import { demoUser } from "./fixtures/authFixtures";
 import { checkingAuthentication, startGoogleSignIn } from "./thunks";
 
-jest.mock("../../firebase/providers");
+jest.mock("../../firebase/providers"); //Ya hago mock de todas las exportacones del archivo providers
 
 describe("AuthThunks tests", () => {
   const dispatch = jest.fn();
-  beforeEach(() => jest.clearAllMocks());
+  beforeEach(() => jest.clearAllMocks()); //funcion callback para asegurarme que cada una de mis funciones mock esten en su estado original
 
   test("Should initiate checkingCredentials", async () => {
     await checkingAuthentication()(dispatch);
